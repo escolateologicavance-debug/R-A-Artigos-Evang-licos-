@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ra-evangelicos-v1';
+const CACHE_NAME = 'ra-evangelicos-v2';
 const assetsToCache = [
 'index.html',
 'manifest.json',
