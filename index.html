@@ -32,27 +32,32 @@
         }
 
         header {
-            background-color: var(--primary);
-            color: var(--white);
-            text-align: center;
-            padding: 0.8rem 0.5rem;
-            border-bottom: 3px solid var(--secondary);
-        }
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 1.2rem 0.5rem 0.8rem 0.5rem; /* Espaço ideal para o logótipo respirar */
+    border-bottom: 3px solid var(--secondary);
+}
 
-        .logo-header {
-            width: 110px;
-            height: auto;
-            display: block;
-            margin: 0 auto 0.3rem auto;
-            border-radius: 8px;
-        }
+.logo-header {
+    width: 80%; /* Ocupa grande parte da largura em ecrãs móveis */
+    max-width: 260px; /* Tamanho generoso e de grande destaque */
+    height: auto;
+    display: block;
+    margin: 0 auto 0.6rem auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25); /* Sombra dourada para destacar o logótipo */
+}
 
-        header p.subtitle {
-            font-style: italic;
-            font-size: 0.85rem;
-            color: #dcdcdc;
-            margin-top: 0.2rem;
-        }
+header p.subtitle {
+    font-style: italic;
+    font-size: 0.88rem;
+    color: #dcdcdc;
+    margin-top: 0.4rem;
+    font-weight: 500;
+}
+
+        
 
         main {
             flex: 1;
