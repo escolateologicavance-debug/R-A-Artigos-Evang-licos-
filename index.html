@@ -1,294 +1,294 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R A - Artigos Evangélicos</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#1a2530">
-<style>
-:root {
---primary: #1a2530;
---secondary: #d4af37;
---bg-light: #f8f9fa;
---text-dark: #333333;
---white: #ffffff;
---whatsapp: #25d366;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R A - Artigos Evangélicos</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a2530">
+    <style>
+        :root {
+            --primary: #1a2530;
+            --secondary: #d4af37;
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --white: #ffffff;
+            --whatsapp: #25d366;
+        }
 
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-body {
-background-color: var(--bg-light);
-color: var(--text-dark);
-display: flex;
-flex-direction: column;
-min-height: 100vh;
-}
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-header {
-background-color: var(--primary);
-color: var(--white);
-text-align: center;
-padding: 1.5rem 1rem;
-border-bottom: 4px solid var(--secondary);
-}
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 0.8rem 0.5rem;
+            border-bottom: 3px solid var(--secondary);
+        }
 
-.logo-header {
-width: 120px;
-height: auto;
-margin-bottom: 0.5rem;
-border-radius: 8px;
-}
+        .logo-header {
+            width: 110px;
+            height: auto;
+            display: block;
+            margin: 0 auto 0.3rem auto;
+            border-radius: 8px;
+        }
 
-header h1 {
-font-size: 1.6rem;
-margin-bottom: 0.3rem;
-}
+        header p.subtitle {
+            font-style: italic;
+            font-size: 0.85rem;
+            color: #dcdcdc;
+            margin-top: 0.2rem;
+        }
 
-header p.subtitle {
-font-style: italic;
-font-size: 0.9rem;
-color: #dcdcdc;
-}
+        main {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+        }
 
-main {
-flex: 1;
-max-width: 900px;
-width: 100%;
-margin: 0 auto;
-padding: 1.5rem 1rem;
-}
+        .section-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-left: 4px solid var(--secondary);
+            padding-left: 8px;
+        }
 
-.section-title {
-font-size: 1.3rem;
-margin-bottom: 1rem;
-color: var(--primary);
-border-left: 4px solid var(--secondary);
-padding-left: 8px;
-}
+        /* Menu de Catálogos Grid */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
 
-/* Menu de Catálogos Grid */
-.catalog-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-gap: 1rem;
-margin-bottom: 2rem;
-}
+        .catalog-card {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.2rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+        }
 
-.catalog-card {
-background: var(--white);
-border: 1px solid #e0e0e0;
-border-radius: 8px;
-padding: 1.2rem;
-text-align: center;
-text-decoration: none;
-color: var(--primary);
-font-weight: bold;
-font-size: 1rem;
-box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-transition: all 0.2s ease;
-}
+        .catalog-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: #fffdf5;
+        }
 
-.catalog-card:hover {
-border-color: var(--secondary);
-transform: translateY(-2px);
-box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-background-color: #fffdf5;
-}
+        /* Seção de Vídeos do YouTube */
+        .video-section {
+            background: var(--white);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 2rem;
+        }
 
-/* Seção de Vídeos do YouTube */
-.video-section {
-background: var(--white);
-padding: 1.2rem;
-border-radius: 8px;
-border: 1px solid #e0e0e0;
-margin-bottom: 2rem;
-}
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            margin-top: 0.8rem;
+        }
 
-.video-container {
-position: relative;
-padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-height: 0;
-overflow: hidden;
-border-radius: 6px;
-margin-top: 0.8rem;
-}
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
-.video-container iframe {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-border: 0;
-}
+        /* Pagamento Pix e Informações de Contato */
+        .info-box {
+            background: var(--white);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 1.5rem;
+        }
 
-/* Pagamento Pix e Contactos */
-.info-box {
-background: var(--white);
-padding: 1.2rem;
-border-radius: 8px;
-border: 1px solid #e0e0e0;
-margin-bottom: 1.5rem;
-}
+        .info-box h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
 
-.info-box h3 {
-margin-bottom: 0.5rem;
-color: var(--primary);
-}
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
 
-.btn {
-display: inline-block;
-padding: 0.6rem 1.2rem;
-border-radius: 4px;
-font-weight: 600;
-text-decoration: none;
-cursor: pointer;
-border: none;
-margin-top: 0.5rem;
-font-size: 0.9rem;
-}
+        .btn-pix {
+            background-color: var(--primary);
+            color: var(--white);
+        }
 
-.btn-pix {
-background-color: var(--primary);
-color: var(--white);
-}
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: var(--white);
+        }
 
-.btn-whatsapp {
-background-color: var(--whatsapp);
-color: var(--white);
-}
+        /* Seção de Feedback */
+        .feedback-section {
+            background: var(--white);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 2rem;
+        }
 
-/* Seção de Feedback */
-.feedback-section {
-background: var(--white);
-padding: 1.2rem;
-border-radius: 8px;
-border: 1px solid #e0e0e0;
-margin-bottom: 2rem;
-}
+        .feedback-section textarea {
+            width: 100%;
+            height: 80px;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            resize: vertical;
+        }
 
-.feedback-section textarea {
-width: 100%;
-height: 80px;
-padding: 0.5rem;
-border: 1px solid #ccc;
-border-radius: 4px;
-margin-top: 0.5rem;
-resize: vertical;
-}
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem 1rem 0.5rem 1rem;
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
 
-footer {
-background-color: var(--primary);
-color: var(--white);
-text-align: center;
-padding: 1.5rem 1rem 0.5rem 1rem;
-font-size: 0.85rem;
-margin-top: auto;
-}
-
-.dev-credits {
-margin-top: 1.5rem;
-font-size: 0.72rem;
-color: #8899a6;
-border-top: 1px solid #2c3e50;
-padding-top: 0.5rem;
-}
-</style>
+        .dev-credits {
+            margin-top: 1.5rem;
+            font-size: 0.72rem;
+            color: #8899a6;
+            border-top: 1px solid #2c3e50;
+            padding-top: 0.5rem;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-<!-- Logo de 192px/512px na parte superior -->
-<img src="logo-192.png" alt="R A Artigos Evangélicos" class="logo-header" onerror="this.src='logo-512.png'">
-<h1>R A - Artigos Evangélicos</h1>
-<p class="subtitle">Qualidade e Compromisso com a Palavra</p>
-</header>
+    <header>
+        <!-- Logo em destaque na parte superior -->
+        <img src="logo-192.png" alt="R A Artigos Evangélicos" class="logo-header" onerror="this.src='logo-512.png'">
+        <!-- Slogan Oficial -->
+        <p class="subtitle">Quem se Alimenta da PALAVRA Nunca Caminha Sozinho!</p>
+    </header>
 
-<main>
-<h2 class="section-title">Nosso Catálogo</h2>
-<div class="catalog-grid">
-<a href="biblia-king-james.html" class="catalog-card">📖 Bíblia King James</a>
-<a href="biblia-obreiro.html" class="catalog-card">📜 Bíblia Obreiro Aprovado</a>
-<a href="biblia-mulher.html" class="catalog-card">🌸 Bíblia da Mulher</a>
-<a href="harpa.html" class="catalog-card">🎵 Harpa Cristã</a>
-<a href="bolsas.html" class="catalog-card">👜 Bolsas</a>
-<a href="saias.html" class="catalog-card">👗 Saias</a>
-<a href="ternos.html" class="catalog-card">👔 Ternos</a>
-</div>
+    <main>
+        <h2 class="section-title">Nosso Catálogo</h2>
+        <div class="catalog-grid">
+            <a href="biblia-king-james.html" class="catalog-card">📖 Bíblia King James</a>
+            <a href="biblia-obreiro.html" class="catalog-card">📜 Bíblia Obreiro Aprovado</a>
+            <a href="biblia-mulher.html" class="catalog-card">🌸 Bíblia da Mulher</a>
+            <a href="harpa.html" class="catalog-card">🎵 Harpa Cristã</a>
+            <a href="bolsas.html" class="catalog-card">👜 Bolsas</a>
+            <a href="saias.html" class="catalog-card">👗 Saias</a>
+            <a href="ternos.html" class="catalog-card">👔 Ternos</a>
+        </div>
 
-<h2 class="section-title">Conheça Nossos Produtos em Vídeo</h2>
-<div class="video-section">
-<p style="font-size: 0.9rem; color: #555;">Assista à apresentação da nossa loja e produtos:</p>
-<div class="video-container">
-<!-- Substitua o trecho "SEU_VIDEO_ID_AQUI" pelo ID do vídeo do YouTube -->
-<iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID_AQUI" title="Vídeo R A Artigos Evangélicos" allowfullscreen></iframe>
-</div>
-</div>
+        <h2 class="section-title">Conheça Nossos Produtos em Vídeo</h2>
+        <div class="video-section">
+            <p style="font-size: 0.9rem; color: #555;">Assista à apresentação da nossa loja e produtos:</p>
+            <div class="video-container">
+                <!-- Substitua o trecho "SEU_VIDEO_ID_AQUI" pelo ID do seu vídeo do YouTube -->
+                <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID_AQUI" title="Vídeo R A Artigos Evangélicos" allowfullscreen></iframe>
+            </div>
+        </div>
 
-<h2 class="section-title">Pagamentos via PIX</h2>
-<div class="info-box">
-<h3>Pagamento Rápido e Seguro</h3>
-<p style="font-size: 0.85rem; color: #555; word-break: break-all;">
-<strong>Chave Pix Copia e Cola:</strong><br>
-<code id="pixKey">00020101021126580014BR.GOV.BCB.PIX01360aa3ebd1-a374-4441-8310-2a89026fbe025204000053039865802BR5925Anderson Rogerio Silva As6009SAO PAULO62080504daqr63046B7E</code>
-</p>
-<button class="btn btn-pix" onclick="copiarPix()">Copiar Chave Pix</button>
-</div>
+        <h2 class="section-title">Pagamentos via PIX</h2>
+        <div class="info-box">
+            <h3>Pagamento Rápido e Seguro</h3>
+            <p style="font-size: 0.85rem; color: #555; word-break: break-all;">
+                <strong>Chave Pix Copia e Cola:</strong><br>
+                <code id="pixKey">00020101021126580014BR.GOV.BCB.PIX01360aa3ebd1-a374-4441-8310-2a89026fbe025204000053039865802BR5925Anderson Rogerio Silva As6009SAO PAULO62080504daqr63046B7E</code>
+            </p>
+            <button class="btn btn-pix" onclick="copiarPix()">Copiar Chave Pix</button>
+        </div>
 
-<h2 class="section-title">FAQ e Atendimento</h2>
-<div class="info-box">
-<p><strong>Pedidos e WhatsApp:</strong> (66) 98408-9634</p>
-<p><strong>E-mail:</strong> andersonrh2014@outloo.com</p>
-<a href="https://wa.me/5566984089634?text=Olá!%20Vim%20pelo%20site%20da%20R%20A%20Artigos%20Evangélicos." target="_blank" class="btn btn-whatsapp">Conversar no WhatsApp</a>
-</div>
+        <h2 class="section-title">FAQ e Atendimento</h2>
+        <div class="info-box">
+            <p><strong>Pedidos e WhatsApp:</strong> (66) 98408-9634</p>
+            <p><strong>E-mail:</strong> andersonrh2014@outloo.com</p>
+            <a href="https://wa.me/5566984089634?text=Olá!%20Vim%20pelo%20site%20da%20R%20A%20Artigos%20Evangélicos." target="_blank" class="btn btn-whatsapp">Conversar no WhatsApp</a>
+        </div>
 
-<h2 class="section-title">Feedback da Sua Compra</h2>
-<div class="feedback-section">
-<p style="font-size: 0.9rem;">Deixe sua opinião ou dúvida sobre o seu pedido:</p>
-<textarea id="feedbackText" placeholder="Escreva seu feedback aqui..."></textarea>
-<button class="btn btn-pix" onclick="enviarFeedback()">Enviar Feedback via WhatsApp</button>
-</div>
-</main>
+        <h2 class="section-title">Feedback da Sua Compra</h2>
+        <div class="feedback-section">
+            <p style="font-size: 0.9rem;">Deixe sua opinião ou dúvida sobre o seu pedido:</p>
+            <textarea id="feedbackText" placeholder="Escreva seu feedback aqui..."></textarea>
+            <button class="btn btn-pix" onclick="enviarFeedback()">Enviar Feedback via WhatsApp</button>
+        </div>
+    </main>
 
-<footer>
-<p>© 2026 R A Artigos Evangélicos. Todos os direitos reservados.</p>
-<div class="dev-credits">
-Desenvolvido por Gilberto Moreira (escolateologicavance@gmail.com) - MT/BR
-</div>
-</footer>
+    <footer>
+        <p>&copy; 2026 R A Artigos Evangélicos. Todos os direitos reservados.</p>
+        <div class="dev-credits">
+            Desenvolvido por Gilberto Moreira (escolateologicavance@gmail.com) - MT/BR
+        </div>
+    </footer>
 
-<!-- Registro do Service Worker PWA -->
-<script>
-if ('serviceWorker' in navigator) {
-window.addEventListener('load', () => {
-navigator.serviceWorker.register('sw.js')
-.then(reg => console.log('Service Worker registrado!'))
-.catch(err => console.log('Erro ao registrar Service Worker:', err));
-});
-}
+    <!-- Registro do Service Worker PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker registrado!'))
+                    .catch(err => console.log('Erro ao registrar Service Worker:', err));
+            });
+        }
 
-function copiarPix() {
-const key = document.getElementById('pixKey').innerText;
-navigator.clipboard.writeText(key).then(() => {
-alert('Chave Pix copiada com sucesso! Cole no aplicativo do seu banco.');
-});
-}
+        function copiarPix() {
+            const key = document.getElementById('pixKey').innerText;
+            navigator.clipboard.writeText(key).then(() => {
+                alert('Chave Pix copiada com sucesso! Cole no aplicativo do seu banco.');
+            }).catch(() => {
+                alert('Copie a chave manualmente: ' + key);
+            });
+        }
 
-function enviarFeedback() {
-const texto = document.getElementById('feedbackText').value.trim();
-if(!texto) {
-alert('Por favor, digite seu feedback antes de enviar.');
-return;
-}
-const msg = encodeURIComponent(Olá! Gostaria de deixar o seguinte feedback: ${texto}); window.open(https://wa.me/5566984089634?text=${msg}, '_blank');
-}
-</script>
+        function enviarFeedback() {
+            const texto = document.getElementById('feedbackText').value.trim();
+            if(!texto) {
+                alert('Por favor, digite seu feedback antes de enviar.');
+                return;
+            }
+            const msg = encodeURIComponent(`Olá! Gostaria de deixar o seguinte feedback: ${texto}`);
+            window.open(`https://wa.me/5566984089634?text=${msg}`, '_blank');
+        }
+    </script>
 </body>
 </html>
