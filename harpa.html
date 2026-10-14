@@ -1,525 +1,525 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harpa Cristã - R A Artigos Evangélicos</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#1a2530">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<style>
-:root {
---primary: #1a2530;
---secondary: #d4af37;
---bg-light: #f8f9fa;
---text-dark: #333333;
---white: #ffffff;
---whatsapp: #25d366;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harpa Cristã - R A Artigos Evangélicos</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a2530">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        :root {
+            --primary: #1a2530;
+            --secondary: #d4af37;
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --white: #ffffff;
+            --whatsapp: #25d366;
+        }
 
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-body {
-background-color: var(--bg-light);
-color: var(--text-dark);
-display: flex;
-flex-direction: column;
-min-height: 100vh;
-}
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-header {
-background-color: var(--primary);
-color: var(--white);
-text-align: center;
-padding: 1.2rem 0.5rem 0.8rem 0.5rem;
-border-bottom: 3px solid var(--secondary);
-}
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 1.2rem 0.5rem 0.8rem 0.5rem;
+            border-bottom: 3px solid var(--secondary);
+        }
 
-.logo-header {
-width: 80%;
-max-width: 260px;
-height: auto;
-display: block;
-margin: 0 auto 0.6rem auto;
-border-radius: 12px;
-box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
-}
+        .logo-header {
+            width: 80%;
+            max-width: 260px;
+            height: auto;
+            display: block;
+            margin: 0 auto 0.6rem auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+        }
 
-header p.subtitle {
-font-style: italic;
-font-size: 0.88rem;
-color: #dcdcdc;
-margin-top: 0.4rem;
-font-weight: 500;
-}
+        header p.subtitle {
+            font-style: italic;
+            font-size: 0.88rem;
+            color: #dcdcdc;
+            margin-top: 0.4rem;
+            font-weight: 500;
+        }
 
-main {
-flex: 1;
-max-width: 900px;
-width: 100%;
-margin: 0 auto;
-padding: 1.5rem 1rem;
-}
+        main {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+        }
 
-.product-card {
-background: var(--white);
-border-radius: 8px;
-overflow: hidden;
-box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-display: flex;
-flex-direction: column;
-border: 1px solid #e0e0e0;
-margin-bottom: 2rem;
-}
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 2rem;
+        }
 
-@media(min-width: 600px) {
-.product-card {
-flex-direction: row;
-}
-}
+        @media(min-width: 600px) {
+            .product-card {
+                flex-direction: row;
+            }
+        }
 
-.product-card img {
-width: 100%;
-max-width: 280px;
-height: 280px;
-object-fit: cover;
-background-color: #eee;
-margin: 0 auto;
-cursor: pointer;
-}
+        .product-card img {
+            width: 100%;
+            max-width: 280px;
+            height: 280px;
+            object-fit: cover;
+            background-color: #eee;
+            margin: 0 auto;
+            cursor: pointer;
+        }
 
-.zoom-hint {
-text-align: center;
-font-size: 0.75rem;
-color: #777;
-margin-top: 4px;
-margin-bottom: 8px;
-}
+        .zoom-hint {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #777;
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
 
-.product-info {
-padding: 1.2rem;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-flex: 1;
-}
+        .product-info {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+        }
 
-.product-info h2 {
-font-size: 1.3rem;
-color: var(--primary);
-margin-bottom: 0.4rem;
-}
+        .product-info h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
 
-.product-price {
-font-size: 1.2rem;
-font-weight: bold;
-color: var(--secondary);
-margin-bottom: 0.8rem;
-}
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+        }
 
-.action-buttons {
-display: flex;
-flex-direction: column;
-gap: 0.6rem;
-margin-top: 1rem;
-}
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
 
-.btn {
-padding: 0.75rem 1rem;
-border-radius: 6px;
-font-size: 0.95rem;
-font-weight: 600;
-text-decoration: none;
-cursor: pointer;
-border: none;
-text-align: center;
-display: block;
-width: 100%;
-}
+        .btn {
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
 
-.btn-pix {
-background-color: var(--primary);
-color: var(--white);
-}
+        .btn-pix {
+            background-color: var(--primary);
+            color: var(--white);
+        }
 
-.btn-whatsapp {
-background-color: var(--whatsapp);
-color: var(--white);
-}
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: var(--white);
+        }
 
-.btn-carne {
-background-color: var(--secondary);
-color: var(--primary);
-font-weight: bold;
-}
+        .btn-carne {
+            background-color: var(--secondary);
+            color: var(--primary);
+            font-weight: bold;
+        }
 
-.modal-overlay {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.75);
-z-index: 999999;
-align-items: center;
-justify-content: center;
-padding: 1rem;
-}
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.75);
+            z-index: 999999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
 
-.modal-content {
-background: var(--white);
-border-radius: 10px;
-max-width: 450px;
-width: 100%;
-padding: 1.5rem;
-position: relative;
-box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-max-height: 90vh;
-overflow-y: auto;
-}
+        .modal-content {
+            background: var(--white);
+            border-radius: 10px;
+            max-width: 450px;
+            width: 100%;
+            padding: 1.5rem;
+            position: relative;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
 
-.modal-close {
-position: absolute;
-top: 10px;
-right: 15px;
-font-size: 1.8rem;
-cursor: pointer;
-border: none;
-background: none;
-color: #666;
-}
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: #666;
+        }
 
-.form-group {
-margin-bottom: 0.9rem;
-}
+        .form-group {
+            margin-bottom: 0.9rem;
+        }
 
-.form-group label {
-display: block;
-font-size: 0.85rem;
-font-weight: 600;
-margin-bottom: 0.3rem;
-color: var(--primary);
-}
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--primary);
+        }
 
-.form-group input, .form-group select {
-width: 100%;
-padding: 0.65rem;
-border: 1px solid #ccc;
-border-radius: 4px;
-font-size: 0.95rem;
-}
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.65rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
 
-.instructions-box {
-background: #fffdf0;
-border: 1px solid var(--secondary);
-padding: 0.8rem;
-border-radius: 4px;
-font-size: 0.82rem;
-color: #555;
-margin-bottom: 1rem;
-line-height: 1.4;
-}
+        .instructions-box {
+            background: #fffdf0;
+            border: 1px solid var(--secondary);
+            padding: 0.8rem;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
 
-.img-modal {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.9);
-z-index: 9999999;
-align-items: center;
-justify-content: center;
-padding: 1rem;
-}
+        .img-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
 
-.img-modal img {
-max-width: 95%;
-max-height: 85vh;
-border-radius: 8px;
-object-fit: contain;
-}
+        .img-modal img {
+            max-width: 95%;
+            max-height: 85vh;
+            border-radius: 8px;
+            object-fit: contain;
+        }
 
-.img-modal-close {
-position: absolute;
-top: 15px;
-right: 20px;
-color: #fff;
-font-size: 2.5rem;
-cursor: pointer;
-font-weight: bold;
-}
+        .img-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-.feedback-section {
-background: var(--white);
-padding: 1.2rem;
-border-radius: 8px;
-border: 1px solid #e0e0e0;
-margin-bottom: 2rem;
-}
+        .feedback-section {
+            background: var(--white);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 2rem;
+        }
 
-.feedback-section textarea {
-width: 100%;
-height: 80px;
-padding: 0.5rem;
-border: 1px solid #ccc;
-border-radius: 4px;
-margin-top: 0.5rem;
-resize: vertical;
-}
+        .feedback-section textarea {
+            width: 100%;
+            height: 80px;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            resize: vertical;
+        }
 
-.back-container {
-text-align: center;
-margin-bottom: 2rem;
-}
+        .back-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
-.btn-back {
-background-color: transparent;
-color: var(--primary);
-border: 2px solid var(--primary);
-padding: 0.6rem 1.5rem;
-border-radius: 4px;
-font-weight: bold;
-text-decoration: none;
-display: inline-block;
-}
+        .btn-back {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-footer {
-background-color: var(--primary);
-color: var(--white);
-text-align: center;
-padding: 1.5rem 1rem 0.5rem 1rem;
-font-size: 0.85rem;
-margin-top: auto;
-}
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem 1rem 0.5rem 1rem;
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
 
-.dev-credits {
-margin-top: 1.5rem;
-font-size: 0.72rem;
-color: #8899a6;
-border-top: 1px solid #2c3e50;
-padding-top: 0.5rem;
-}
-</style>
+        .dev-credits {
+            margin-top: 1.5rem;
+            font-size: 0.72rem;
+            color: #8899a6;
+            border-top: 1px solid #2c3e50;
+            padding-top: 0.5rem;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-<img src="logo-192.png" alt="R A Artigos Evangélicos" class="logo-header" onerror="this.src='logo-512.png'">
-<p class="subtitle">Quem se Alimenta da PALAVRA Nunca Caminha Sozinho!</p>
-</header>
+    <header>
+        <img src="logo-192.png" alt="R A Artigos Evangélicos" class="logo-header" onerror="this.src='logo-512.png'">
+        <p class="subtitle">Quem se Alimenta da PALAVRA Nunca Caminha Sozinho!</p>
+    </header>
 
-<main>
-<div class="product-card">
-<div>
-<img src="img4.png" alt="Harpa Cristã" onclick="expandirImagem(this.src)" onerror="this.src='https://via.placeholder.com/280?text=Harpa+Crista'">
-<div class="zoom-hint">🔍 Clique na foto para ampliar</div>
-</div>
-<div class="product-info">
-<div>
-<h2>Harpa Cristã</h2>
-<div class="product-price">R
- 12,50 / 3x de R$` 8,34</div>
-<p style="font-size: 0.9rem; color: #555;">Harpa Cristã tradicional com os hinos oficiais, excelente acabamento e letras legíveis.</p>
-</div>
+    <main>
+        <div class="product-card">
+            <div>
+                <img src="img4.png" alt="Harpa Cristã" onclick="expandirImagem(this.src)" onerror="this.src='https://via.placeholder.com/280?text=Harpa+Crista'">
+                <div class="zoom-hint">🔍 Clique na foto para ampliar</div>
+            </div>
+            <div class="product-info">
+                <div>
+                    <h2>Harpa Cristã</h2>
+                    <div class="product-price">R$ 20,00 à vista ou 2x de R$ 12,50 / 3x de R$ 8,34</div>
+                    <p style="font-size: 0.9rem; color: #555;">Harpa Cristã tradicional com os hinos oficiais, excelente acabamento e letras legíveis.</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-pix" onclick="copiarPix('20.00')">Pagar com Pix (À Vista)</button>
+                    <a href="https://wa.me/5566984089634?text=Olá!%20Gostaria%20de%20pedir%20a%20Harpa%20Cristã." target="_blank" class="btn btn-whatsapp">Pedir no WhatsApp</a>
+                    <button type="button" class="btn btn-carne" onclick="abrirCrediario()">CLIQUE AQUI e Pague no Carnê!</button>
+                </div>
+            </div>
+        </div>
 
-<div class="action-buttons">
-<button type="button" class="btn btn-pix" onclick="copiarPix('20.00')">Pagar com Pix (À Vista)</button>
-<a href="https://wa.me/5566984089634?text=Olá!%20Gostaria%20de%20pedir%20a%20Harpa%20Cristã." target="_blank" class="btn btn-whatsapp">Pedir no WhatsApp</a>
-<button type="button" class="btn btn-carne" onclick="abrirCrediario()">CLIQUE AQUI e Pague no Carnê!</button>
-</div>
-</div>
-</div>
+        <div class="feedback-section">
+            <h3>Feedback da Sua Compra</h3>
+            <p style="font-size: 0.85rem; color: #555;">Deixe sua opinião ou dúvida sobre este produto:</p>
+            <textarea id="feedbackText" placeholder="Escreva seu feedback aqui..."></textarea>
+            <button type="button" class="btn btn-pix" style="margin-top: 0.5rem;" onclick="enviarFeedback()">Enviar Feedback via WhatsApp</button>
+        </div>
 
-<div class="feedback-section">
-<h3>Feedback da Sua Compra</h3>
-<p style="font-size: 0.85rem; color: #555;">Deixe sua opinião ou dúvida sobre este produto:</p>
-<textarea id="feedbackText" placeholder="Escreva seu feedback aqui..."></textarea>
-<button type="button" class="btn btn-pix" style="margin-top: 0.5rem;" onclick="enviarFeedback()">Enviar Feedback via WhatsApp</button>
-</div>
+        <div class="back-container">
+            <a href="index.html" class="btn-back">← Voltar ao Catálogo Principal</a>
+        </div>
+    </main>
 
-<div class="back-container">
-<a href="index.html" class="btn-back">← Voltar ao Catálogo Principal</a>
-</div>
-</main>
+    <!-- Modal do Crediário -->
+    <div id="modalCrediario" class="modal-overlay">
+        <div class="modal-content">
+            <button type="button" class="modal-close" onclick="fecharCrediario()">&times;</button>
+            <h3 style="color: var(--primary); margin-bottom: 0.3rem;">Crediário Próprio - R A - Artigos Evangélicos</h3>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">Produto: Harpa Cristã</p>
 
-<!-- Modal do Crediário -->
-<div id="modalCrediario" class="modal-overlay">
-<div class="modal-content">
-<button type="button" class="modal-close" onclick="fecharCrediario()">×</button>
-<h3 style="color: var(--primary); margin-bottom: 0.3rem;">Crediário Próprio - R A - Artigos Evangélicos</h3>
-<p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">Produto: Harpa Cristã</p>
+            <form id="formCrediario" onsubmit="processarCarne(event)">
+                <div class="form-group">
+                    <label>Nome Completo:*</label>
+                    <input type="text" id="clienteNome" required placeholder="Digite seu nome completo">
+                </div>
 
-<form id="formCrediario" onsubmit="processarCarne(event)">
-<div class="form-group">
-<label>Nome Completo:*</label>
-<input type="text" id="clienteNome" required placeholder="Digite seu nome completo">
-</div>
+                <div class="form-group">
+                    <label>CPF:*</label>
+                    <input type="text" id="clienteCPF" required placeholder="000.000.000-00">
+                </div>
 
-<div class="form-group">
-<label>CPF:*</label>
-<input type="text" id="clienteCPF" required placeholder="000.000.000-00">
-</div>
+                <div class="form-group">
+                    <label>Endereço Completo:*</label>
+                    <input type="text" id="clienteEnd" required placeholder="Rua, Número, Bairro, Cidade - UF">
+                </div>
 
-<div class="form-group">
-<label>Endereço Completo:*</label>
-<input type="text" id="clienteEnd" required placeholder="Rua, Número, Bairro, Cidade - UF">
-</div>
+                <div class="form-group">
+                    <label>Valor Total da Compra (R$):*</label>
+                    <input type="number" step="0.01" id="compraValor" value="20.00" required>
+                </div>
 
-<div class="form-group">
-<label>Valor Total da Compra (R`$):*</label>
-<input type="number" step="0.01" id="compraValor" value="20.00" required>
-</div>
+                <div class="form-group">
+                    <label>Quantidade de Parcelas (Máximo 3x):*</label>
+                    <select id="qtdParcelas">
+                        <option value="1">1x de R$ 20,00 (À vista)</option>
+                        <option value="2">2x de R$ 12,50</option>
+                        <option value="3" selected>3x de R$ 8,34</option>
+                    </select>
+                </div>
 
-<div class="form-group">
-<label>Quantidade de Parcelas (Máximo 3x):*</label>
-<select id="qtdParcelas">
-<option value="1">1x de R
+                <div class="instructions-box">
+                    <strong>Instruções de Pagamento:</strong> Ao enviar a aprovação do carnê para o Financeiro da R A - Artigos Evangélicos, ele enviará a chave Pix pelo WhatsApp abaixo!
+                </div>
 
- 12,50</option>
-<option value="3" selected>3x de R$` 8,34</option>
-</select>
-</div>
+                <button type="submit" class="btn btn-whatsapp">Gerar Carnê e Enviar Pedido</button>
+            </form>
+        </div>
+    </div>
 
-<div class="instructions-box">
-<strong>Instruções de Pagamento:</strong> Ao enviar a aprovação do carnê para o Financeiro da R A - Artigos Evangélicos, ele enviará a chave Pix pelo WhatsApp abaixo!
-</div>
+    <!-- Modal de Expansão de Imagem -->
+    <div id="modalImagem" class="img-modal" onclick="fecharImagem()">
+        <span class="img-modal-close">&times;</span>
+        <img id="imgExpandida" src="" alt="Imagem Ampliada">
+    </div>
 
-<button type="submit" class="btn btn-whatsapp">Gerar Carnê e Enviar Pedido</button>
-</form>
-</div>
-</div>
+    <footer>
+        <p>&copy; 2026 R A Artigos Evangélicos. Todos os direitos reservados.</p>
+        <div class="dev-credits">
+            Desenvolvido por Gilberto Moreira (escolateologicavance@gmail.com) - MT/BR
+        </div>
+    </footer>
 
-<!-- Modal de Expansão de Imagem -->
-<div id="modalImagem" class="img-modal" onclick="fecharImagem()">
-<span class="img-modal-close">×</span>
-<img id="imgExpandida" src="" alt="Imagem Ampliada">
-</div>
+    <script>
+        var chavePix = "00020101021126580014BR.GOV.BCB.PIX01360aa3ebd1-a374-4441-8310-2a89026fbe025204000053039865802BR5925Anderson Rogerio Silva As6009SAO PAULO62080504daqr63046B7E";
+        var produtoAtual = "Harpa Cristã";
 
-<footer>
-<p>© 2026 R A Artigos Evangélicos. Todos os direitos reservados.</p>
-<div class="dev-credits">
-Desenvolvido por Gilberto Moreira (escolateologicavance@gmail.com) - MT/BR
-</div>
-</footer>
+        function abrirCrediario() {
+            document.getElementById('modalCrediario').style.display = 'flex';
+        }
 
-<script>
-var chavePix = "00020101021126580014BR.GOV.BCB.PIX01360aa3ebd1-a374-4441-8310-2a89026fbe025204000053039865802BR5925Anderson Rogerio Silva As6009SAO PAULO62080504daqr63046B7E";
-var produtoAtual = "Harpa Cristã";
+        function fecharCrediario() {
+            document.getElementById('modalCrediario').style.display = 'none';
+        }
 
-function abrirCrediario() {
-document.getElementById('modalCrediario').style.display = 'flex';
-}
+        function expandirImagem(src) {
+            document.getElementById('imgExpandida').src = src;
+            document.getElementById('modalImagem').style.display = 'flex';
+        }
 
-function fecharCrediario() {
-document.getElementById('modalCrediario').style.display = 'none';
-}
+        function fecharImagem() {
+            document.getElementById('modalImagem').style.display = 'none';
+        }
 
-function expandirImagem(src) {
-document.getElementById('imgExpandida').src = src;
-document.getElementById('modalImagem').style.display = 'flex';
-}
+        function copiarPix(valor) {
+            var input = document.createElement("textarea");
+            input.value = chavePix;
+            input.style.position = "fixed";
+            input.style.left = "-9999px";
+            document.body.appendChild(input);
+            input.focus();
+            input.select();
+            
+            var sucesso = false;
+            try {
+                sucesso = document.execCommand("copy");
+            } catch(e) {
+                sucesso = false;
+            }
+            document.body.removeChild(input);
 
-function fecharImagem() {
-document.getElementById('modalImagem').style.display = 'none';
-}
+            if (sucesso) {
+                alert("Chave Pix copiada com sucesso!\n\nValor: R$ " + valor + "\nCole no aplicativo do seu banco para pagar.");
+            } else {
+                prompt("Copie a Chave Pix abaixo e cole no seu banco (Valor: R$ " + valor + "):", chavePix);
+            }
+        }
 
-function copiarPix(valor) {
-var input = document.createElement("textarea");
-input.value = chavePix;
-input.style.position = "fixed";
-input.style.left = "-9999px";
-document.body.appendChild(input);
-input.focus();
-input.select();
+        function enviarFeedback() {
+            var texto = document.getElementById('feedbackText').value.trim();
+            if(!texto) {
+                alert('Por favor, digite seu feedback antes de enviar.');
+                return;
+            }
+            var msg = encodeURIComponent("Olá! Feedback sobre " + produtoAtual + ": " + texto);
+            window.open("https://wa.me/5566984089634?text=" + msg, '_blank');
+        }
 
-var sucesso = false;
-try {
-sucesso = document.execCommand("copy");
-} catch(e) {
-sucesso = false;
-}
-document.body.removeChild(input);
+        function processarCarne(event) {
+            event.preventDefault();
 
-if (sucesso) {
-alert("Chave Pix copiada com sucesso!\n\nValor: R$ " + valor + "\nCole no aplicativo do seu banco para pagar."); } else { prompt("Copie a Chave Pix abaixo e cole no seu banco (Valor: R$ " + valor + "):", chavePix);
-}
-}
+            var nome = document.getElementById('clienteNome').value.trim();
+            var cpf = document.getElementById('clienteCPF').value.trim();
+            var endereco = document.getElementById('clienteEnd').value.trim();
+            var valorTotal = parseFloat(document.getElementById('compraValor').value);
+            var parcelas = parseInt(document.getElementById('qtdParcelas').value);
+            
+            var valorParcela = "20.00";
+            if (parcelas === 2) valorParcela = "12.50";
+            if (parcelas === 3) valorParcela = "8.34";
 
-function enviarFeedback() {
-var texto = document.getElementById('feedbackText').value.trim();
-if(!texto) {
-alert('Por favor, digite seu feedback antes de enviar.');
-return;
-}
-var msg = encodeURIComponent("Olá! Feedback sobre " + produtoAtual + ": " + texto);
-window.open("https://wa.me/5566984089634?text=" + msg, '_blank');
-}
+            try {
+                if (window.jspdf && window.jspdf.jsPDF) {
+                    var { jsPDF } = window.jspdf;
+                    var doc = new jsPDF();
 
-function processarCarne(event) {
-event.preventDefault();
+                    doc.setFontSize(16);
+                    doc.setTextColor(26, 37, 48);
+                    doc.text("R A - Artigos Evangélicos", 20, 20);
+                    doc.setFontSize(12);
+                    doc.text("CARNÊ DE PAGAMENTO - CREDIÁRIO PRÓPRIO", 20, 28);
+                    doc.line(20, 32, 190, 32);
 
-var nome = document.getElementById('clienteNome').value.trim();
-var cpf = document.getElementById('clienteCPF').value.trim();
-var endereco = document.getElementById('clienteEnd').value.trim();
-var valorTotal = parseFloat(document.getElementById('compraValor').value);
-var parcelas = parseInt(document.getElementById('qtdParcelas').value);
+                    doc.setFontSize(10);
+                    doc.text("Cliente: " + nome, 20, 42);
+                    doc.text("CPF: " + cpf, 20, 48);
+                    doc.text("Endereço: " + endereco, 20, 54);
+                    doc.text("Produto: " + produtoAtual, 20, 60);
+                    doc.text("Valor Total: R$ " + valorTotal.toFixed(2), 20, 66);
 
-var valorParcela = "20.00";
-if (parcelas === 2) valorParcela = "12.50";
-if (parcelas === 3) valorParcela = "8.34";
+                    var y = 80;
+                    for (var i = 1; i <= parcelas; i++) {
+                        doc.setDrawColor(212, 175, 55);
+                        doc.rect(20, y, 170, 35);
+                        doc.setFontSize(11);
+                        doc.text("PARCELA " + i + "/" + parcelas, 25, y + 10);
+                        doc.setFontSize(10);
+                        doc.text("Valor: R$ " + valorParcela, 25, y + 18);
+                        doc.text("Instrução: Aguarde a chave Pix via WhatsApp", 25, y + 26);
+                        y += 42;
+                    }
 
-try {
-if (window.jspdf && window.jspdf.jsPDF) {
-var { jsPDF } = window.jspdf;
-var doc = new jsPDF();
+                    doc.setFontSize(8);
+                    doc.text("Instruções: Ao enviar a aprovação do carnê para o Financeiro da R A - Artigos Evangélicos, ele enviará a chave Pix pelo WhatsApp.", 20, y + 10);
+                    doc.save("Carne_RA_" + nome.replace(/\s+/g, '_') + ".pdf");
+                }
+            } catch (err) {
+                console.log("PDF via WhatsApp:", err);
+            }
 
-doc.setFontSize(16);
-doc.setTextColor(26, 37, 48);
-doc.text("R A - Artigos Evangélicos", 20, 20);
-doc.setFontSize(12);
-doc.text("CARNÊ DE PAGAMENTO - CREDIÁRIO PRÓPRIO", 20, 28);
-doc.line(20, 32, 190, 32);
-
-doc.setFontSize(10);
-doc.text("Cliente: " + nome, 20, 42);
-doc.text("CPF: " + cpf, 20, 48);
-doc.text("Endereço: " + endereco, 20, 54);
-doc.text("Produto: " + produtoAtual, 20, 60);
-doc.text("Valor Total: R`$ " + valorTotal.toFixed(2), 20, 66);
-
-var y = 80;
-for (var i = 1; i <= parcelas; i++) {
-doc.setDrawColor(212, 175, 55);
-doc.rect(20, y, 170, 35);
-doc.setFontSize(11);
-doc.text("PARCELA " + i + "/" + parcelas, 25, y + 10);
-doc.setFontSize(10);
-doc.text("Valor: R$` " + valorParcela, 25, y + 18);
-doc.text("Instrução: Aguarde a chave Pix via WhatsApp", 25, y + 26);
-y += 42;
-}
-
-doc.setFontSize(8);
-doc.text("Instruções: Ao enviar a aprovação do carnê para o Financeiro da R A - Artigos Evangélicos, ele enviará a chave Pix pelo WhatsApp.", 20, y + 10);
-doc.save("Carne_RA_" + nome.replace(/\s+/g, '_') + ".pdf");
-}
-} catch (err) {
-console.log("PDF via WhatsApp:", err);
-}
-
-var msg = encodeURIComponent("Olá! Gostaria de fechar o pedido no Crediário Próprio:\n\nProduto: " + produtoAtual + "\nCliente: " + nome + "\nCPF: " + cpf + "\nEndereço: " + endereco + "\nValor Total: R`$ " + valorTotal.toFixed(2) + "\nPlano: " + parcelas + "x de R$ " + valorParcela + "\n\nAguardando o envio da chave Pix pelo Financeiro!");
-
-window.open("https://wa.me/5566984089634?text=" + msg, '_blank');
-fecharCrediario();
-}
-</script>
+            var msg = encodeURIComponent("Olá! Gostaria de fechar o pedido no Crediário Próprio:\n\n*Produto:* " + produtoAtual + "\n*Cliente:* " + nome + "\n*CPF:* " + cpf + "\n*Endereço:* " + endereco + "\n*Valor Total:* R$ " + valorTotal.toFixed(2) + "\n*Plano:* " + parcelas + "x de R$ " + valorParcela + "\n\nAguardando o envio da chave Pix pelo Financeiro!");
+            
+            window.open("https://wa.me/5566984089634?text=" + msg, '_blank');
+            fecharCrediario();
+        }
+    </script>
 </body>
 </html>
